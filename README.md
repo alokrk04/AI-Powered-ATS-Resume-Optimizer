@@ -75,7 +75,7 @@ ats-optimizer/
 │                                                                 │
 │  ┌─────────────────────────────────────────────────────────┐    │
 │  │                    LLM Service                          │    │
-│  │  Provider: Anthropic Claude | OpenAI GPT-4o | Ollama    │    │
+│  │  Provider:  Ollama                                      │    │
 │  │  • analyze_resume()   — full ATS analysis               │    │
 │  │  • optimize_bullet()  — XYZ formula transform           │    │
 │  │  • rewrite_resume()   — full restructure                │    │
@@ -229,12 +229,12 @@ ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
 
 Edit `backend/.env`:
 
-| Model | RAM needed | Quality | Speed |
-|-------|-----------|---------|-------|
-| `llama3.2` | 4 GB | Good | Fast ⚡ |
-| `llama3.1` | 8 GB | Great | Medium ✓ |
-| `mistral` | 8 GB | Great (JSON) | Medium |
-| `gemma2` | 10 GB | Excellent | Slow |
+| Model      | RAM needed | Quality      | Speed    |
+|------------|------------|--------------|----------|
+| `llama3.2` | 4 GB       | Good         | Fast ⚡   |
+| `llama3.1` | 8 GB       | Great        | Medium ✓ |
+| `mistral`  | 8 GB       | Great (JSON) | Medium   |
+| `gemma2`   | 10 GB      | Excellent    | Slow     |
 
 ```bash
 ollama pull mistral
@@ -242,8 +242,6 @@ ollama pull mistral
 ```
 
 ---
-
-
 
 ## 📈 Score Interpretation
 
