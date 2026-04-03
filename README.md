@@ -130,7 +130,7 @@ ollama serve
 # 1. Install Ollama
 brew install ollama
 
-# 2. Pull a model — pick based on your Mac's RAM
+# 2. Pull a model — pick based on your  RAM
 ollama pull llama3.2      # 4GB RAM (M1/M2 base)
 ollama pull llama3.1      # 8GB RAM (recommended ✓)
 ollama pull mistral       # 8GB RAM (best for JSON)
@@ -159,15 +159,15 @@ npm run dev
 
 ## 🔌 API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/resume/upload` | Upload PDF or DOCX resume |
-| `POST` | `/api/resume/parse-text` | Parse pasted resume text |
-| `POST` | `/api/analyze/` | Full ATS analysis (rule + LLM) |
-| `POST` | `/api/analyze/quick-score` | Fast rule-only score (<100ms) |
-| `POST` | `/api/optimize/bullet` | Optimize single bullet (→ 3 XYZ versions) |
-| `POST` | `/api/optimize/rewrite` | Full resume rewrite |
-| `POST` | `/api/optimize/generate-pdf` | Export ATS-compliant PDF |
+| Method | Endpoint                     | Description                                |
+|--------|------------------------------|--------------------------------------------|
+| `POST` | `/api/resume/upload`         | Upload PDF or DOCX resume                  |
+| `POST` | `/api/resume/parse-text`     | Parse pasted resume text                   |
+| `POST` | `/api/analyze/`              | Full ATS analysis (rule + LLM)             | 
+| `POST` | `/api/analyze/quick-score`   | Fast rule-only score (<100ms)              |
+| `POST` | `/api/optimize/bullet`       | Optimize single bullet (→ 3 XYZ versions)  |
+| `POST` | `/api/optimize/rewrite`      | Full resume rewrite                        |
+| `POST` | `/api/optimize/generate-pdf` | Export ATS-compliant PDF                   |
 
 ---
 
@@ -175,12 +175,12 @@ npm run dev
 
 The engine computes a composite score from 4 weighted dimensions:
 
-| Dimension | Weight | Method |
-|-----------|--------|--------|
-| Keyword Match | 40% | TF-IDF inspired overlap of JD keywords in resume |
-| Formatting | 25% | ATS red-flag detection + section structure |
-| Relevance | 20% | Cosine similarity on bag-of-words |
-| Quantification | 15% | Count of numeric metrics in bullet points |
+| Dimension      | Weight | Method                                           |
+|----------------|--------|--------------------------------------------------|
+| Keyword Match  | 40%    | TF-IDF inspired overlap of JD keywords in resume |
+| Formatting     | 25%    | ATS red-flag detection + section structure       |
+| Relevance      | 20%    | Cosine similarity on bag-of-words                |
+| Quantification | 15%    | Count of numeric metrics in bullet points        |
 
 The LLM then calibrates the final score with semantic understanding.
 
@@ -190,25 +190,25 @@ The LLM then calibrates the final score with semantic understanding.
 
 Three engineered prompts are used (see `services/llm_service.py`):
 
-| Prompt | Purpose |
-|--------|---------|
-| `CAREER_COACH_SYSTEM_PROMPT` | Full ATS analysis — data-driven, precise, ATS-aware |
+| Prompt                           | Purpose                                              |
+|----------------------------------|------------------------------------------------------|
+| `CAREER_COACH_SYSTEM_PROMPT`     | Full ATS analysis — data-driven, precise, ATS-aware  |
 | `BULLET_OPTIMIZER_SYSTEM_PROMPT` | XYZ formula transformations — action verbs + metrics |
-| `RESUME_REWRITER_SYSTEM_PROMPT` | Full resume restructure — ATS formatting rules |
+| `RESUME_REWRITER_SYSTEM_PROMPT`  | Full resume restructure — ATS formatting rules       |
 
 ---
 
 ## 📦 Key Dependencies
 
-| Library | Purpose |
-|---------|---------|
-| `fastapi` | Backend web framework |
-| `pdfplumber` | PDF text extraction (primary) |
-| `PyPDF2` | PDF extraction fallback |
-| `python-docx` | DOCX file parsing |
-| `spacy` | NLP entity recognition |
-| `reportlab` | ATS-compliant PDF generation |
-| `httpx` | Async HTTP for LLM API calls |
+| Library       | Purpose                       |
+|---------------|-------------------------------|
+| `fastapi`     | Backend web framework         |
+| `pdfplumber`  | PDF text extraction (primary) |
+| `PyPDF2`      | PDF extraction fallback       |
+| `python-docx` | DOCX file parsing             |
+| `spacy`       | NLP entity recognition        |
+| `reportlab`   | ATS-compliant PDF generation  |
+| `httpx`       | Async HTTP for LLM API calls  |
 
 ---
 
@@ -245,12 +245,12 @@ ollama pull mistral
 
 ## 📈 Score Interpretation
 
-| Score | Label | Recommended Action |
-|-------|-------|--------------------|
-| 80–100 | ✅ Excellent | Minor tweaks, ready to apply |
-| 60–79 | ⚠️ Needs Work | Add missing keywords, quantify bullets |
-| 40–59 | 🔶 Poor | Major rewrite recommended |
-| 0–39 | ❌ Critical | Resume fundamentally mismatched |
+| Score  | Label         | Recommended Action                     |
+|--------|---------------|--------------------------------------- |
+| 80–100 | ✅ Excellent  | Minor tweaks, ready to apply           |
+| 60–79  | ⚠️ Needs Work | Add missing keywords, quantify bullets |
+| 40–59  | 🔶 Poor       | Major rewrite recommended              |
+| 0–39   | ❌ Critical   | Resume fundamentally mismatched        |
 
 
 
