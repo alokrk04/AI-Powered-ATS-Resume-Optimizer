@@ -1,4 +1,4 @@
-# AI Coding Agent Guidelines for Resume Opti
+# AI Coding Agent Guidelines for Resume Optimizer
 
 ## Architecture Overview
 - **Type**: Full-stack SPA with AI-powered resume analysis and optimization
