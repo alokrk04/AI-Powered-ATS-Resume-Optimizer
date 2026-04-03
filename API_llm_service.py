@@ -6,6 +6,7 @@ Contains the carefully engineered system prompts that make the AI behave as a
 Professional Career Coach and ATS Expert.
 
 """" If you are using an API of any LLM provider use this code for llms which needs required api keys for LLM """"
+USE THIS CODE FOR API LLM MODELS LIKE CLAUDE OR OPENAI
 Swap provider by changing the `_call_llm` method — just keep the JSON contract.
 """
 
