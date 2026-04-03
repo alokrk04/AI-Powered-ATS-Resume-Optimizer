@@ -1,5 +1,7 @@
-# ── ATS Resume Optimizer — Backend Dependencies ───────────────────────────────
+# AI Powered ATS Resume Optimizer  — Backend Dependencies ───────────────────────────────
+# ── ATS Resume Optimizer 
 # Install: pip install -r requirements.txt
+ 
 
 # Web Framework
 fastapi>=0.111.0
