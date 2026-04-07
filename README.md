@@ -140,7 +140,7 @@ ollama serve
 
 # 4. Copy your .env
 cp .env.example .env
-# Edit .env → set OLLAMA_MODEL=llama3.2  (or whichever you pulled)
+# Edit .env → set OLLAMA_MODEL=llama3.1  (or whichever you pulled)
 
 # 5. Start your backend as usual
 cd "Resume Opti"
